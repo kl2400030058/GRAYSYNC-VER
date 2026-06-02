@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Enforce clean, full-width cybernetic background setups */
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #080A0F;
+    color: #F1F5F9;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  /* Completely remove the default Vite fixed-width constraints */
+  #root {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: block;
+    text-align: left;
+    border: none !important;
+    box-sizing: border-box;
+  }
+}
+
+@layer utilities {
+  /* High-Performance GPU-Accelerated Energy Highway Streamers */
+  @keyframes circuit-flow {
+    0% {
+      transform: translateY(-200px);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 0.1;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(110vh);
+      opacity: 0;
+    }
+  }
+
+  .comet {
+    position: absolute;
+    width: 1.5px;
+    height: 180px;
+    opacity: 0;
+    pointer-events: none;
+    animation: circuit-flow 20s linear infinite;
+    will-change: transform, opacity;
+  }
+
+  /* High-Velocity White Core Streamer */
+  .comet-white-core {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.45), transparent);
+    filter: drop-shadow(0 0 4px rgba(0, 210, 255, 0.25));
+  }
+
+  /* Recognizer Blue Circuit Streamer */
+  .comet-teal {
+    background: linear-gradient(to bottom, rgba(0, 210, 255, 0.35), transparent);
+    filter: drop-shadow(0 0 4px rgba(0, 210, 255, 0.15));
+  }
+
+  /* Spatially and temporally staggered emitters */
+  .comet-1 { left: 15%; top: 0%; animation-delay: 0s; animation-duration: 16s; }
+  .comet-2 { left: 45%; top: 0%; animation-delay: 4.5s; animation-duration: 24s; }
+  .comet-3 { left: 75%; top: 0%; animation-delay: 9s; animation-duration: 20s; }
+  .comet-4 { left: 88%; top: 0%; animation-delay: 14s; animation-duration: 28s; }
+}
+
