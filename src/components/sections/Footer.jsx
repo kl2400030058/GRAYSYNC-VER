@@ -4,6 +4,7 @@ import FooterLink from "../ui/FooterLink";
 import ComplianceBadge from "../ui/ComplianceBadge";
 import Newsletter from "../ui/Newsletter";
 import { revealContainer, revealItem } from "../../utils/motion";
+import { DESIGNER, BRAND_NAME, COMPANY_NAME, REG_INDEX } from "../../utils/brand";
 
 export default function Footer({ setActivePage }) {
   const shouldReduceMotion = useReducedMotion();
@@ -16,7 +17,7 @@ export default function Footer({ setActivePage }) {
   ];
 
   const resourceLinks = [
-    { label: "Documentation", page: "specifications" },
+    { label: "Documentation", page: "documentation" },
     { label: "Specifications", page: "specifications" },
     { label: "Knowledge Base", page: "specifications" },
   ];
@@ -39,7 +40,7 @@ export default function Footer({ setActivePage }) {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-55px" }}
-      className="relative bg-[#0D0E12] border-t border-slate-800/80 pt-20 pb-12 overflow-hidden"
+      className="relative bg-[#0D0E12] border-t border-slate-800/80 pt-20 pb-12 overflow-hidden transition-colors duration-300"
       aria-label="Footer and regulatory details"
     >
       {/* Blueprint Sub-Grid Background Layer */}
@@ -90,6 +91,7 @@ export default function Footer({ setActivePage }) {
               {"Technical Brief"}
             </Button>
           </div>
+
         </div>
 
         {/* Part 2 & 3: Columns and Newsletter Directory Grid */}
@@ -101,30 +103,46 @@ export default function Footer({ setActivePage }) {
           className="grid grid-cols-1 md:grid-cols-12 gap-12 pt-8"
         >
           {/* Column 1: Company Brand & Mission (4 columns) */}
-          <motion.div variants={columnItem} className="md:col-span-4 space-y-4">
-            <button
-              onClick={() => {
-                setActivePage("home");
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-              className="text-md font-bold font-mono tracking-[0.25em] text-slate-200 uppercase text-left"
-              aria-label="GraySync Home"
-            >
-              {"GRAY"}<span className="text-[#00D2FF]">{"//"}</span>{"SYNC"}
-            </button>
+          <motion.div variants={columnItem} className="md:col-span-4 space-y-4 text-left">
+            <div className="flex items-center gap-2 select-none mb-2">
+              {/* Custom SVG Synapse Logo Emblem */}
+              <svg 
+                className="w-5 h-5 text-[#00D2FF] shrink-0" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2.5" 
+                aria-hidden="true"
+              >
+                <circle cx="7.5" cy="12" r="3.5" stroke="currentColor" />
+                <circle cx="16.5" cy="12" r="3.5" stroke="#00F5D4" />
+                <path d="M10.5 11 L13.5 13" stroke="currentColor" strokeDasharray="1.5 1.5" />
+                <path d="M10.5 13 L13.5 11" stroke="currentColor" />
+              </svg>
+              <button
+                onClick={() => {
+                  setActivePage("home");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="text-md font-bold font-mono tracking-[0.25em] text-slate-200 uppercase"
+                aria-label={`${BRAND_NAME} Home`}
+              >
+                GRAY<span className="text-[#00D2FF] font-light">//</span>SYNC
+              </button>
+            </div>
             <p className="text-xs text-slate-500 font-light leading-relaxed pr-4">
               {"GraySync develops high-performance neuro-prosthetics, visual overlay frameworks, and biological motor augmentation platforms. We are committed to absolute safety, clinical validation, and human-machine cooperation."}
             </p>
             <div className="text-[10px] font-mono text-slate-600">
-              {"REGISTRATION_INDEX: "}<span className="text-slate-400">{"REF_GS-2026-NEURO-77A"}</span>
+              {"REGISTRATION_INDEX: "}<span className="text-slate-400">{REG_INDEX}</span>
             </div>
           </motion.div>
 
           {/* Column 2: Tech Directory (2 columns) */}
-          <motion.div variants={columnItem} className="md:col-span-2">
-            <h4 className="text-xs font-bold font-mono tracking-wider text-slate-300 uppercase mb-4">
+          <motion.div variants={columnItem} className="md:col-span-2 text-left">
+            <h3 className="text-xs font-bold font-mono tracking-wider text-slate-300 uppercase mb-4">
               {"Technology"}
-            </h4>
+            </h3>
             <ul className="space-y-2.5" aria-label="Technology catalog links">
               {technologyLinks.map((link) => (
                 <FooterLink
@@ -141,10 +159,10 @@ export default function Footer({ setActivePage }) {
           </motion.div>
 
           {/* Column 3: Resources Directory (2 columns) */}
-          <motion.div variants={columnItem} className="md:col-span-2">
-            <h4 className="text-xs font-bold font-mono tracking-wider text-slate-300 uppercase mb-4">
+          <motion.div variants={columnItem} className="md:col-span-2 text-left">
+            <h3 className="text-xs font-bold font-mono tracking-wider text-slate-300 uppercase mb-4">
               {"Resources"}
-            </h4>
+            </h3>
             <ul className="space-y-2.5" aria-label="Scientific resources links">
               {resourceLinks.map((link) => (
                 <FooterLink
@@ -185,10 +203,32 @@ export default function Footer({ setActivePage }) {
               <span className="font-semibold text-slate-500 block mb-1 uppercase tracking-wider">{"// LEGAL_DISCLAIMER:"}</span>
               {"GraySync is a mock technical demonstration representing a high-performance clinical concept. All biological telemetry parameters, heartbeat oscillations, EEG brainwave diagrams, and synapto-compatibility scores showcased on this platform are mathematically simulated and do not represent actual diagnostic ratings."}
             </div>
+            
+            {/* Custom credits for Durga Gangadhar Dabbada with functional links */}
             <div className="lg:col-span-4 flex flex-col justify-end items-start lg:items-end font-mono">
-              <span>{"DESIGNED BY: TECHFEST_STUDENT_TEAM_08"}</span>
-              <span className="text-[8px] text-slate-700 mt-1">
-                {"© "}{new Date().getFullYear()}{" GRAYSYNC INC. ALL CHANNELS RESERVED."}
+              <div className="flex flex-col items-start lg:items-end gap-1.5 font-mono text-[9px] uppercase">
+                <span className="text-slate-500 font-semibold tracking-wider">{"// CREATOR_CREDIT:"}</span>
+                <span className="text-slate-400 text-left lg:text-right normal-case">
+                  Designed & Developed by:
+                </span>
+                <a 
+                  href={DESIGNER.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-[#00D2FF] hover:underline font-bold text-[10px] tracking-wider transition-colors"
+                >
+                  {DESIGNER.name.toUpperCase()}
+                </a>
+                <div className="flex gap-2.5 mt-0.5 font-semibold text-[8px] text-[#00F5D4]">
+                  <a href={DESIGNER.github} target="_blank" rel="noopener noreferrer" className="hover:text-slate-200 transition-colors">GitHub</a>
+                  <span className="text-slate-600">•</span>
+                  <a href={DESIGNER.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-slate-200 transition-colors">LinkedIn</a>
+                  <span className="text-slate-600">•</span>
+                  <a href={`mailto:${DESIGNER.email}`} className="hover:text-slate-200 transition-colors">Email</a>
+                </div>
+              </div>
+              <span className="text-[8px] text-slate-700 mt-3 tracking-widest uppercase">
+                {"© "}{new Date().getFullYear()}{" "}{COMPANY_NAME}{" ALL CHANNELS RESERVED."}
               </span>
             </div>
           </div>

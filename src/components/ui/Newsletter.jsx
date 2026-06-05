@@ -72,7 +72,7 @@ export default function Newsletter() {
             aria-required="true"
             aria-invalid={status === "error"}
             aria-describedby={status !== "idle" ? "newsletter-status-message" : undefined}
-            className="w-full h-11 px-4 rounded bg-[#131722]/50 border border-slate-800/80 backdrop-blur-md text-slate-200 placeholder-slate-600 font-mono text-sm focus:outline-none focus:border-[#00D2FF]/60 transition-all duration-300 disabled:opacity-50 select-text"
+            className="w-full h-11 px-4 rounded bg-[#131722]/50 border border-slate-800/80 backdrop-blur-md text-slate-200 placeholder-slate-600 font-mono text-sm focus:outline-none focus:border-[#00D2FF]/60 focus-visible:ring-2 focus-visible:ring-[#00D2FF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D0E12] transition-all duration-300 disabled:opacity-50 select-text"
           />
         </div>
         

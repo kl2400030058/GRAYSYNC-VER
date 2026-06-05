@@ -102,9 +102,9 @@ export default function Diagnostics() {
           <span className="text-[10px] font-mono tracking-[0.25em] text-[#00D2FF] uppercase font-semibold">
             {"// MONITOR_SYS: REAL_TIME_CYBERNETIC_PROJECTIONS"}
           </span>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-heading tracking-tight text-slate-100">
+          <h1 className="mt-2 text-3xl sm:text-4xl font-bold font-heading tracking-tight text-slate-100">
             {"Diagnostics Terminal"}
-          </h2>
+          </h1>
           <p className="mt-4 text-base text-slate-400 font-light leading-relaxed">
             {"Monitor infinite grid telemetry streams in real-time. Select dynamic biometric channels below to resolve specific neural waveforms and sensor readouts."}
           </p>
@@ -149,6 +149,28 @@ export default function Diagnostics() {
                       if (e.key === " " || e.key === "Enter") {
                         e.preventDefault();
                         setActiveTab(tab.id);
+                      } else {
+                        const index = tabs.findIndex((t) => t.id === tab.id);
+                        let nextIndex;
+                        if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+                          nextIndex = (index + 1) % tabs.length;
+                        } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+                          nextIndex = (index - 1 + tabs.length) % tabs.length;
+                        } else if (e.key === "Home") {
+                          nextIndex = 0;
+                        } else if (e.key === "End") {
+                          nextIndex = tabs.length - 1;
+                        }
+
+                        if (nextIndex !== undefined) {
+                          e.preventDefault();
+                          const nextTabId = tabs[nextIndex].id;
+                          setActiveTab(nextTabId);
+                          setTimeout(() => {
+                            const nextBtn = document.getElementById(`tab-control-${nextTabId}`);
+                            nextBtn?.focus();
+                          }, 0);
+                        }
                       }
                     }}
                     className={`relative flex-1 min-w-[120px] px-4 py-3 rounded-lg border text-xs font-mono tracking-wider uppercase text-center transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF] ${
@@ -249,6 +271,7 @@ export default function Diagnostics() {
             {/* Custom SVG Waveform Display area (Parallax translateZ) */}
             <div
               ref={graphContainerRef}
+              role="img"
               style={shouldReduceMotion || isMobile ? {} : { transform: "translateZ(30px)" }}
               className="relative w-full h-36 sm:h-40 bg-[#040808] rounded-xl border border-[#00D2FF]/20 flex items-center justify-center shadow-[inset_0_0_20px_rgba(0,0,0,0.9),0_0_15px_rgba(0,210,255,0.05)] overflow-hidden select-none z-10"
               aria-label={`Biometric waveform oscillograph plotting active ${activeTab} link states.`}

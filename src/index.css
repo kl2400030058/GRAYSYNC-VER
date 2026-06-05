@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "@fontsource/google-sans/index.css";
+@import "@fontsource/space-mono/index.css";
 
 @tailwind base;
 @tailwind components;
@@ -13,14 +14,15 @@
     min-height: 100vh;
     background-color: #080A0F;
     color: #F1F5F9;
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Google Sans', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Google Sans', sans-serif;
     font-weight: 600;
     letter-spacing: -0.015em;
   }
@@ -90,3 +92,304 @@
   .comet-4 { left: 88%; top: 0%; animation-delay: 14s; animation-duration: 28s; }
 }
 
+/* ==========================================
+   PREMIUM LIGHT THEME CSS OVERRIDES
+   ========================================== */
+
+.light {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+/* 1. Background Core adjustments */
+.light .bg-\[\#080A0F\] {
+  background-color: #F8FAFC !important;
+}
+
+.light .bg-\[\#0D0E12\] {
+  background-color: #F1F5F9 !important;
+}
+
+.light .bg-\[\#0D0E12\]\/80 {
+  background-color: rgba(241, 245, 249, 0.85) !important;
+}
+
+.light header {
+  background-color: rgba(248, 250, 252, 0.85) !important;
+  border-color: rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 0 4px 30px rgba(15, 23, 42, 0.04) !important;
+}
+
+.light footer {
+  background-color: #F1F5F9 !important;
+  border-color: rgba(226, 232, 240, 0.8) !important;
+}
+
+/* 2. Glassmorphic Chassis Card styles */
+.light .bg-\[\#131722\]\/75,
+.light .bg-\[\#131722\]\/55,
+.light .bg-\[\#131722\] {
+  background-color: rgba(255, 255, 255, 0.78) !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.01) !important;
+}
+
+/* Border overrides */
+.light .border-slate-800\/80,
+.light .border-slate-800\/60,
+.light .border-slate-800\/30,
+.light .border-slate-800 {
+  border-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+.light .border-slate-900 {
+  border-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+/* 3. Text scales color adaptations */
+.light .text-slate-100,
+.light .text-slate-200 {
+  color: #0F172A !important;
+}
+
+.light .text-slate-300,
+.light .text-slate-400 {
+  color: #334155 !important;
+}
+
+.light .text-slate-500 {
+  color: #475569 !important;
+}
+
+.light .text-slate-600 {
+  color: #64748B !important;
+}
+
+.light .text-slate-700 {
+  color: #94A3B8 !important;
+}
+
+/* 4. High-contrast neon accents */
+.light .text-\[\#00D2FF\] {
+  color: #0284C7 !important; /* Sky 600 */
+}
+
+.light .text-\[\#00F5D4\] {
+  color: #0D9488 !important; /* Teal 600 */
+}
+
+.light .border-\[\#00D2FF\]\/20 {
+  border-color: rgba(2, 132, 199, 0.25) !important;
+}
+
+.light .border-\[\#00F5D4\]\/20 {
+  border-color: rgba(13, 148, 136, 0.25) !important;
+}
+
+.light .bg-\[\#00D2FF\]\/5 {
+  background-color: rgba(2, 132, 199, 0.05) !important;
+}
+
+.light .from-\[\#00D2FF\] {
+  --tw-gradient-from: #0284C7 var(--tw-gradient-from-position) !important;
+}
+
+.light .via-\[\#00F5D4\] {
+  --tw-gradient-via: #0D9488 var(--tw-gradient-via-position) !important;
+}
+
+.light .hover\:border-\[\#00D2FF\]\/30:hover {
+  border-color: rgba(2, 132, 199, 0.5) !important;
+}
+
+.light .hover\:border-\[\#00D2FF\]\/80:hover {
+  border-color: rgba(2, 132, 199, 0.8) !important;
+}
+
+.light .group-hover\:border-\[\#00D2FF\]\/60 {
+  border-color: rgba(2, 132, 199, 0.6) !important;
+}
+
+/* 5. Diagnostics monitor & oscilloscope display adjustments */
+.light .bg-\[\#080A0F\]\/80 {
+  background-color: rgba(241, 245, 249, 0.8) !important;
+}
+
+.light .bg-\[\#080A0F\]\/90 {
+  background-color: #FFFFFF !important;
+}
+
+.light .bg-\[\#040808\] {
+  background-color: #F8FAFC !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+  box-shadow: inset 0 2px 10px rgba(15, 23, 42, 0.03) !important;
+}
+
+.light .stroke-slate-900 {
+  stroke: rgba(226, 232, 240, 0.8) !important;
+}
+
+/* 6. Neural background vector grid modifications */
+.light .tron-grid-floor {
+  background-image: 
+    linear-gradient(to right, rgba(2, 132, 199, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(2, 132, 199, 0.06) 1px, transparent 1px) !important;
+}
+
+.light .bg-gradient-to-b.from-\[\#080A0F\] {
+  background-image: linear-gradient(to bottom, #F8FAFC, transparent) !important;
+}
+
+.light .bg-gradient-to-t.from-\[\#080A0F\] {
+  background-image: linear-gradient(to top, #F8FAFC, transparent) !important;
+}
+
+/* 7. Input fields and generic buttons overrides */
+.light input {
+  background-color: #FFFFFF !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+  color: #0F172A !important;
+}
+
+.light input::placeholder {
+  color: #94A3B8 !important;
+}
+
+.light .bg-slate-950\/90 {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+}
+
+.light .hover\:bg-slate-900\/90:hover {
+  background-color: rgba(241, 245, 249, 0.95) !important;
+}
+
+/* 8. Rotating calibrations core vectors inside Hero */
+.light circle[stroke="#1E293B"] {
+  stroke: rgba(226, 232, 240, 0.8) !important;
+}
+
+.light circle[stroke="#334155"] {
+  stroke: rgba(203, 213, 225, 0.8) !important;
+}
+
+/* Comet streamer overrides */
+.light .comet-white-core {
+  background: linear-gradient(to bottom, rgba(2, 132, 199, 0.25), transparent) !important;
+  filter: drop-shadow(0 0 4px rgba(2, 132, 199, 0.15)) !important;
+}
+
+.light .comet-teal {
+  background: linear-gradient(to bottom, rgba(13, 148, 136, 0.2), transparent) !important;
+  filter: drop-shadow(0 0 4px rgba(13, 148, 136, 0.1)) !important;
+}
+
+/* Neural Grid Background styles moved from component inline style tag for CSP compliance */
+@keyframes perspective-scroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 64px; }
+}
+
+.tron-perspective-container {
+  perspective: 350px;
+  perspective-origin: 50% 25%;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tron-grid-floor {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background-image: 
+    linear-gradient(to right, rgba(0, 210, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 210, 255, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+  transform: rotateX(75deg);
+  transform-origin: 50% 50%;
+  animation: perspective-scroll 16s linear infinite;
+}
+
+@keyframes pulse-flow {
+  0% { stroke-dashoffset: 40; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.energy-trail {
+  stroke-dasharray: 8 24;
+  animation: pulse-flow 6s linear infinite;
+}
+
+@keyframes node-aurora {
+  0%, 100% { transform: scale(1); opacity: 0.25; }
+  50% { transform: scale(1.15); opacity: 0.5; }
+}
+
+.node-pulse-s {
+  transform-origin: center;
+  animation: node-aurora 7s ease-in-out infinite;
+}
+
+@keyframes beam-breath {
+  0%, 100% { opacity: 0.02; height: 35%; }
+  50% { opacity: 0.12; height: 75%; }
+}
+
+.light-beam-cyan {
+  animation: beam-breath 8s ease-in-out infinite;
+}
+
+.light-beam-white {
+  animation: beam-breath 11s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tron-grid-floor {
+    animation: none !important;
+  }
+  .energy-trail {
+    animation: none !important;
+    stroke-dasharray: none !important;
+  }
+  .node-pulse-s {
+    animation: none !important;
+    opacity: 0.35 !important;
+  }
+  .light-beam-cyan, .light-beam-white {
+    animation: none !important;
+    opacity: 0.04 !important;
+    height: 40% !important;
+  }
+}
+
+/* Telemetry Graph CRT monitor styles moved from inline component style tag for CSP compliance */
+@keyframes crt-scanline {
+  0% { transform: translateY(-10px); }
+  100% { transform: translateY(150px); }
+}
+
+@keyframes screen-flicker {
+  0%, 100% { opacity: 0.985; }
+  50% { opacity: 1; }
+}
+
+.crt-sweep-line {
+  animation: crt-scanline 5s linear infinite;
+}
+
+.crt-flicker {
+  animation: screen-flicker 0.2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crt-sweep-line {
+    animation: none !important;
+    display: none;
+  }
+  .crt-flicker {
+    animation: none !important;
+  }
+}

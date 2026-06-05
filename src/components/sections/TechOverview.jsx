@@ -82,9 +82,9 @@ export default function TechOverview() {
           <span className="text-[10px] font-mono tracking-[0.25em] text-[#00D2FF] uppercase">
             {"// COMPONENT_CATALOG: CORE_AUGMENTS"}
           </span>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-sans tracking-tight text-slate-100">
+          <h1 className="mt-2 text-3xl sm:text-4xl font-bold font-sans tracking-tight text-slate-100">
             {"Augmentation Vector"}
-          </h2>
+          </h1>
           <p className="mt-4 text-base text-slate-400 font-light leading-relaxed">
             {"Our medical-grade enhancements offer seamless physiological bridges. Engineered with titanium casing and biosensor feedback loops, each system represents the absolute frontier of synthetic human potential."}
           </p>

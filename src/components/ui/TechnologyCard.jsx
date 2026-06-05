@@ -149,12 +149,12 @@ export default function TechnologyCard({
           </div>
 
           {/* Card Body: Title & Copy */}
-          <h3
+          <h2
             id={`tech-title-${index}`}
             className="text-xl font-bold font-sans tracking-tight text-slate-100 group-hover:text-[#00D2FF] transition-colors duration-300"
           >
             {title}
-          </h3>
+          </h2>
           <p className="mt-3 text-sm text-slate-400 leading-relaxed font-light">
             {description}
           </p>
@@ -165,8 +165,8 @@ export default function TechnologyCard({
           style={shouldReduceMotion || isMobile ? {} : { transform: "translateZ(18px)" }}
           className="mt-8 pt-6 border-t border-slate-800/80"
         >
-          <h4 className="sr-only">Technical Performance Metrics</h4>
-          <div className="grid grid-cols-2 gap-4" aria-label="Product performance ratings">
+          <h3 className="sr-only">Technical Performance Metrics</h3>
+          <div className="grid grid-cols-2 gap-4" role="group" aria-label="Product performance ratings">
             {metrics.map((metric) => (
               <div key={metric.label} className="font-mono">
                 <span className="block text-[10px] text-slate-400 tracking-wider uppercase font-medium">

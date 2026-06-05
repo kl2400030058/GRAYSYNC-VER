@@ -111,9 +111,9 @@ export default function TechSpecs() {
               <span className="text-[10px] font-mono tracking-[0.25em] text-[#00D2FF] uppercase">
                 {"// CATALOG_SYS: SYSTEM_SPECS"}
               </span>
-              <h2 className="mt-2 text-3xl sm:text-4xl font-bold font-sans tracking-tight text-slate-100">
+              <h1 className="mt-2 text-3xl sm:text-4xl font-bold font-sans tracking-tight text-slate-100">
                 {"Technical Specifications"}
-              </h2>
+              </h1>
               <p className="mt-4 text-base text-slate-400 font-light leading-relaxed">
                 {"Review verified operational envelopes. Our specifications represent verified laboratory ratings covering connection latencies, processing bandwidths, and stability metrics."}
               </p>

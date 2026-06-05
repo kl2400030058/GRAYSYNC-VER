@@ -117,12 +117,12 @@ export default function SpecCard({ title, specs, status, index }) {
         >
           {/* Title and Badge Line */}
           <div className="flex items-center justify-between pb-4 border-b border-slate-800/60 mb-6">
-            <h3
+            <h2
               id={`spec-title-${index}`}
               className="text-lg font-bold font-sans text-slate-100 tracking-tight"
             >
               {title}
-            </h3>
+            </h2>
             <Badge variant="stable">{status}</Badge>
           </div>
 

@@ -17,7 +17,7 @@ export default function FAQItem({ question, answer, isOpen, onClick, index }) {
     <div className="border-b border-slate-800/80 last:border-0 py-4">
       
       {/* Accordion Header Trigger */}
-      <h4>
+      <h3>
         <button
           type="button"
           onClick={onClick}
@@ -43,7 +43,7 @@ export default function FAQItem({ question, answer, isOpen, onClick, index }) {
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </motion.svg>
         </button>
-      </h4>
+      </h3>
 
       {/* Animated Accordion Content Panel */}
       <AnimatePresence initial={false}>

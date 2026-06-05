@@ -140,36 +140,12 @@ function TelemetryGraph({ activeTab, telemetry }) {
 
   return (
     <div className="relative w-full h-full">
-      <style>{`
-        @keyframes crt-scanline {
-          0% { transform: translateY(-10px); }
-          100% { transform: translateY(150px); }
-        }
-        @keyframes screen-flicker {
-          0%, 100% { opacity: 0.985; }
-          50% { opacity: 1; }
-        }
-        .crt-sweep-line {
-          animation: crt-scanline 5s linear infinite;
-        }
-        .crt-flicker {
-          animation: screen-flicker 0.2s infinite;
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .crt-sweep-line {
-            animation: none !important;
-            display: none;
-          }
-          .crt-flicker {
-            animation: none !important;
-          }
-        }
-      `}</style>
 
       <svg
         className="w-full h-full crt-flicker"
         viewBox="0 0 500 140"
         preserveAspectRatio="none"
+        aria-hidden="true"
       >
         <defs>
           {/* SVG Neon Trace Filter: multi-stage blurs to bloom the path line */}
